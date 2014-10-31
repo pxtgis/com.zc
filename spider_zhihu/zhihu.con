@@ -1,0 +1,3 @@
+[zhihu]
+today=http://news-at.zhihu.com/api/3/stories/latest
+before=http://news-at.zhihu.com/api/3/stories/before/

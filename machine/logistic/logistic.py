@@ -1,7 +1,6 @@
 #coding=utf-8
 from numpy import *
 
-
 def loadDataSet():
     dataMat=[]
     labelMat=[]
@@ -99,13 +98,7 @@ def stocGradAscent1(dataMatrix,classLabels,numIter=150):
             del(dataIndex[randIndex])
         return weights
 
-
-
-
     pass
-
-
-
 
 if __name__=="__main__":
     dataMat,labelMat=loadDataSet()

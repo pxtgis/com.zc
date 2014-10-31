@@ -1,0 +1,5 @@
+select  CONCAT(case when dayofweek(create_time)=1 then DATE_FORMAT(DATE_SUB(create_time,INTERVAL 6 DAY),'%Y-%m-%d') when dayofweek(create_time)=2 then DATE_FORMAT(DATE_SUB(create_time,INTERVAL 0 DAY),'%Y-%m-%d') when dayofweek(create_time)=3 then DATE_FORMAT(DATE_SUB(create_time,INTERVAL 1 DAY),'%Y-%m-%d')
+when dayofweek(create_time)=4 then DATE_FORMAT(DATE_SUB(create_time,INTERVAL 2 DAY),'%Y-%m-%d') when dayofweek(create_time)=5 then DATE_FORMAT(DATE_SUB(create_time,INTERVAL 3 DAY),'%Y-%m-%d')
+when dayofweek(create_time)=6 then DATE_FORMAT(DATE_SUB(create_time,INTERVAL 4 DAY),'%Y-%m-%d') when dayofweek(create_time)=7 then DATE_FORMAT(DATE_SUB(create_time,INTERVAL 5 DAY),'%Y-%m-%d') end) s_day,count(DISTINCT uid) user_num
+from (select create_time,uid from user_order_history where i_status=3 and DATE_FORMAT(create_time,'%Y%m%d')>="20140612"  UNION  select create_time,uid from user_order where i_status=3 ) as A
+group by s_day

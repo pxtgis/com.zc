@@ -75,14 +75,14 @@ def exacte_data(in_file,result_file):
 
 
 def changedata_test():
-    infile='phone_user.txt'
-    resultfile='result.txt'
-    errorfile='error.txt'
+    infile='phone_user.data'
+    resultfile='result.data'
+    errorfile='error.data'
     changedata(infile,resultfile,errorfile)
 
 def exacte_data_test():
-    infile='phone_user.txt'
-    resultfile='city_data.txt'
+    infile='phone_user.data'
+    resultfile='city_data.data'
     exacte_data(infile,resultfile)
 
 if __name__=="__main__":

@@ -4,6 +4,7 @@ from numpy import *
 
 def loadDataSet(fileName):
     numFeat=len(open(fileName).readline().split('\t'))
+
     dataMat=[]
     labelMat=[]
     fr=open(fileName)
@@ -28,7 +29,6 @@ def standRegres(xArr,yArr):
     ws=xTx.I*(xMat.T*yMat)
     return ws
 
-    pass
 
 
 ####局部加权线性回归
@@ -57,7 +57,11 @@ def lwlrTest(testArr,xArr,yArr,k=1.0):
     return yHat
 
 
-
+if __name__=="__main__":
+    fileName="ex0.txt"
+    data,label=loadDataSet(fileName)
+    print data
+    pass
 
 
 
